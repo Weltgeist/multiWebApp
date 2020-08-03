@@ -9,6 +9,12 @@ $(document).ready(function() {
 
   $('h1').on('mouseenter', function() {
     console.log('hover achieve')
+    $(this).css('background-color', 'red')
+  })
+
+  $('h1').on('mouseleave', function() {
+    console.log('hover achieve')
+    $(this).css('background-color', 'blue')
   })
 });
 
