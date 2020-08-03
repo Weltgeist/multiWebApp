@@ -16,5 +16,10 @@ $(document).ready(function() {
     console.log('hover achieve')
     $(this).css('background-color', 'blue')
   })
+
+  $('form').on('submit', function(event) {
+    event.preventDefault()
+  })
+  
 });
 
