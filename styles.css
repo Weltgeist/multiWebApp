@@ -52,3 +52,17 @@ p{
 button {
   background-color: #5c413f;
 }
+
+.circle {
+  height: 200px;
+  width: 200px;
+  background-color: pink;
+  border-radius: 50%;
+  transition-property: background-color;
+  transition-duration: 2s;
+  transition-timing-function: ease-in;
+}
+
+.green {
+  background-color: green;
+}

@@ -4,7 +4,8 @@ $(document).ready(function() {
 
   $('a').click(function(){
     console.log('linkas been click');
-    $('h1').slideUp(1500).slideDown(1500)
+    $('h1').slideUp(1500).slideDown(1500);
+    $('.circle').toggleClass('green');
   })
 
   $('h1').on('mouseenter', function() {
