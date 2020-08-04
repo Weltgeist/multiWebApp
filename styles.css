@@ -4,12 +4,36 @@
 
 */
 
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #5c413f; /*Cornflower Blue*/
+}
+
+header {
+  width: 100%;
+  background-color: #dacb96; /*Revolver*/
+}
 header h1 {
-  background-color: blue;
+  font-family: 'Rowdies', cursive;
+  font-size: 30px;
+  color: #9366b2; /*Yellow Metal*/
+}
+
+.container > h2 {
+  font-family: 'Bungee Shade', cursive;
+  font-size: 20px;
+  color:  #9366b2 ;/*Cornflower Blue*/
 }
 
 a {
   background-color: green;
+}
+
+p{
+  font-family: 'recursive', sans-serif;
 }
 
 .container {
@@ -17,10 +41,14 @@ a {
   margin: 10px auto;
   padding: 10px 10px;
   border-radius: 10px;
-  background-color: grey;
+  background-color: #afbc57; /*Yellow Green*/
 }
 
 .result {
   background-color: white;
   display: none;
+}
+
+button {
+  background-color: #5c413f;
 }

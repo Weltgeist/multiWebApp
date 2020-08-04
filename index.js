@@ -25,3 +25,19 @@ $(document).ready(function() {
   
 });
 
+
+$('form input').on('focus', function() {
+  // add code here
+  $(this).css('outline', '1px dotted red')
+})
+
+$('form input').on('blur', function() {
+  // add code here
+  $(this).css('outline', '')
+})
+
+$('form input').on('change', function() {
+  // add code here
+  
+  $(this).css('outline', '1px dotted green')
+})
