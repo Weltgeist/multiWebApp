@@ -19,3 +19,8 @@ a {
   border-radius: 10px;
   background-color: grey;
 }
+
+.result {
+  background-color: white;
+  display: none;
+}

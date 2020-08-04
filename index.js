@@ -20,6 +20,7 @@ $(document).ready(function() {
   $('form').on('submit', function(event) {
     event.preventDefault()
     $('button').hide(500);
+    $('.result').show(500).slideUp(1500).slideDown(1500)
   })
   
 });
