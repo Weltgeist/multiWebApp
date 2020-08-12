@@ -18,12 +18,30 @@ $(document).ready(function() {
     $(this).css('background-color', 'blue')
   })
 
-  $('form').on('submit', function(event) {
+  $('.horoscope form').on('submit', function(event) {
     event.preventDefault()
-    $('button').hide(500);
-    $('.result').show(500).slideUp(1500).slideDown(1500)
+    $('.horoscope button').hide(500);
+    //$('.result').show(500).slideUp(1500).slideDown(1500)
+    $('.horoscope .result').show(500).append("<p>I'll be the last paragraph in the article</p>")
+
+  })
+
+  $('.weather form').on('submit', function(event) {
+    event.preventDefault()
+    $('.weather button').hide(500);
+    //$('.result').show(500).slideUp(1500).slideDown(1500)
+    $('.weather .result').show(500).append("<p>I'll be the last paragraph in the article</p>")
+
   })
   
+  $('.recipe form').on('submit', function(event) {
+    event.preventDefault()
+    $('.recipe button').hide(500);
+    //$('.result').show(500).slideUp(1500).slideDown(1500)
+    $('.recipe .result').show(500).append("<p>I'll be the last paragraph in the article</p>")
+
+  })
+    
 });
 
 
