@@ -158,7 +158,6 @@ const drinkData = {
 
 
 $(document).ready(function() {
-  // WRITE YOUR CODE HERE.
   console.log("Hello World");
 
   $('a').click(function(){
@@ -182,8 +181,8 @@ $(document).ready(function() {
   $('.horoscope form').on('submit', function(event) {
     event.preventDefault()
     $('.horoscope button').hide(500);
+    $('.horoscope input').hide(500);
     console.log($('.horoscope input').val());
-    //$('.result').show(500).slideUp(1500).slideDown(1500)
     getData(horoscopeData,['date','sign','horoscope'],'.horoscope .result')
 
   })
@@ -191,8 +190,8 @@ $(document).ready(function() {
   $('.weather form').on('submit', function(event) {
     event.preventDefault()
     $('.weather button').hide(500);
+    $('.weather input').hide(500);
     console.log($('.weather input').val());
-    //$('.result').show(500).slideUp(1500).slideDown(1500)
     getData(weatherData,'name','.weather .result')
 
   })
@@ -200,8 +199,8 @@ $(document).ready(function() {
   $('.recipe form').on('submit', function(event) {
     event.preventDefault()
     $('.recipe button').hide(500);
+    $('.recipe input').hide(500);
     console.log($('.recipe input').val());
-    //$('.result').show(500).slideUp(1500).slideDown(1500)
     drinkData.drinks.forEach(elem => 
       getData(elem,['strDrink','strCategory','strIngredient1','strIngredient2','strIngredient3'],'.recipe .result'))
   })
@@ -210,17 +209,13 @@ $(document).ready(function() {
 
 
 $('form input').on('focus', function() {
-  // add code here
   $(this).css('outline', '1px dotted red')
 })
 
 $('form input').on('blur', function() {
-  // add code here
   $(this).css('outline', '')
 })
 
 $('form input').on('change', function() {
-  // add code here
-  
   $(this).css('outline', '1px dotted green')
 })
