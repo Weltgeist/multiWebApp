@@ -7,7 +7,13 @@ function createListItems(object) {
 }
 
 const getData = (object, key, position) => {
+  if (typeof key === 'string'){
     $(position).show(500).append("<p>"+object[key]+"</p>");
+  }
+  else if  (Array.isArray(key)){
+    console.log(key)
+    key.forEach(elem => $(position).show(500).append("<p>"+object[elem]+"</p>"));
+  }
 }
 
 
@@ -175,7 +181,7 @@ $(document).ready(function() {
     event.preventDefault()
     $('.horoscope button').hide(500);
     //$('.result').show(500).slideUp(1500).slideDown(1500)
-    getData(horoscopeData,'sign','.horoscope .result')
+    getData(horoscopeData,['date','sign','horoscope'],'.horoscope .result')
 
   })
 
@@ -192,7 +198,7 @@ $(document).ready(function() {
     $('.recipe button').hide(500);
     //$('.result').show(500).slideUp(1500).slideDown(1500)
     drinkData.drinks.forEach(elem => 
-      getData(elem,'strDrink','.recipe .result'))
+      getData(elem,['strDrink','strCategory','strIngredient1','strIngredient2','strIngredient3'],'.recipe .result'))
   })
     
 });
