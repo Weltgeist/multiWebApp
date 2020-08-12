@@ -6,6 +6,10 @@ function createListItems(object) {
   return listItems
 }
 
+const getData = (object,key) => {
+
+}
+
 
 const horoscopeData ={
   horoscope: "Feeling moody, Cancer? You can chalk it up to today’s tough angle between the moon and volcanic Pluto. Put extra effort into not projecting your tension and frustration onto those around you, especially when dealing with your so-called opponents. If you’ve got social plans this evening, it might be best to bow out. Why force yourself to go through the motions when all you really want to do is curl up with your Kindle or catch up with the Kardashians?",
