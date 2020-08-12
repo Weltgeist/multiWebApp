@@ -182,6 +182,9 @@ $(document).ready(function() {
 
   $('.horoscope form').on('submit', function(event) {
     event.preventDefault()
+    $.get('http://horoscope-lhl.herokuapp.com/horoscopes/gemini', function(data) {
+  console.log(data)
+})
     $('.horoscope .search-button').hide(500);
     $('.horoscope input').hide(500);
     $('.horoscope .reset-button').show(500);
@@ -192,6 +195,9 @@ $(document).ready(function() {
 
   $('.weather form').on('submit', function(event) {
     event.preventDefault()
+    $.get('https://api.openweathermap.org/data/2.5/weather?units=metric&q=London&appid='+keyWeatherApi, function(data) {
+  console.log(data)
+})
     $('.weather .search-button').hide(500);
     $('.weather input').hide(500);
     $('.weather .reset-button').show(500);
@@ -203,6 +209,9 @@ $(document).ready(function() {
   
   $('.recipe form').on('submit', function(event) {
     event.preventDefault()
+    $.get('https://www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita', function(data) {
+  console.log(data)
+})
     $('.recipe .search-button').hide(500);
     $('.recipe input').hide(500);
     $('.recipe .reset-button').show(500);
