@@ -1,4 +1,8 @@
 keyWeatherApi = '8387c1d42ca5ca7e1f30a03217438028';
+baseUrlHoroscope ='http://horoscope-api.herokuapp.com/horoscope/today/';
+//urlHoroscope = 'http://horoscope-lhl.herokuapp.com/horoscopes/';
+baseUrlWeather = 'https://api.openweathermap.org/data/2.5/weather?units=metric&q=';
+baseUrlDrinks = 'https://www.thecocktaildb.com/api/json/v1/1/search.php?s=';
 
 function createListItems(object) {
   var listItems = ''
@@ -183,7 +187,7 @@ $(document).ready(function() {
   $('.horoscope form').on('submit', function(event) {
     event.preventDefault()
     const search = $('.horoscope input').val()
-    $.get('http://horoscope-lhl.herokuapp.com/horoscopes/gemini', function(data) {
+    $.get(baseUrlHoroscope + search, function(data) {
   console.log(data)
 })
     $('.horoscope .search-button').hide(500);
@@ -197,7 +201,7 @@ $(document).ready(function() {
   $('.weather form').on('submit', function(event) {
     event.preventDefault()
     const search = $('.weather input').val()
-    $.get('https://api.openweathermap.org/data/2.5/weather?units=metric&q='+search+'&appid='+keyWeatherApi, function(data) {
+    $.get(baseUrlWeather + search +'&appid='+ keyWeatherApi, function(data) {
   console.log(data)
 })
     $('.weather .search-button').hide(500);
@@ -212,7 +216,7 @@ $(document).ready(function() {
   $('.recipe form').on('submit', function(event) {
     event.preventDefault()
     const search = $('.recipe input').val()
-    $.get('https://www.thecocktaildb.com/api/json/v1/1/search.php?s='+search, function(data) {
+    $.get(baseUrlDrinks + search, function(data) {
   console.log(data)
 })
     $('.recipe .search-button').hide(500);
