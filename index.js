@@ -191,8 +191,8 @@ $(document).ready(function() {
     event.preventDefault()
     $('.recipe button').hide(500);
     //$('.result').show(500).slideUp(1500).slideDown(1500)
-    $('.recipe .result').show(500).append("<p>I'll be the last paragraph in the article</p>")
-
+    drinkData.drinks.forEach(elem => 
+      getData(elem,'strDrink','.recipe .result'))
   })
     
 });
