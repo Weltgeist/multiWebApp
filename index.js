@@ -7,9 +7,7 @@ function createListItems(object) {
 }
 
 const getData = (object, key, position) => {
-  if (key.length === 1){
-    $(position).show(500).append("<p>"+object[key]+"</p>")
-  }
+    $(position).show(500).append("<p>"+object[key]+"</p>");
 }
 
 
@@ -177,7 +175,7 @@ $(document).ready(function() {
     event.preventDefault()
     $('.horoscope button').hide(500);
     //$('.result').show(500).slideUp(1500).slideDown(1500)
-    $('.horoscope .result').show(500).append("<p>I'll be the last paragraph in the article</p>")
+    getData(horoscopeData,'sign','.horoscope .result')
 
   })
 
@@ -185,7 +183,7 @@ $(document).ready(function() {
     event.preventDefault()
     $('.weather button').hide(500);
     //$('.result').show(500).slideUp(1500).slideDown(1500)
-    $('.weather .result').show(500).append("<p>I'll be the last paragraph in the article</p>")
+    getData(weatherData,'name','.weather .result')
 
   })
   
