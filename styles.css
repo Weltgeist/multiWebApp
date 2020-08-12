@@ -47,6 +47,11 @@ button {
   background-color: #5c413f;
 }
 
+.reset-button {
+  display: none;
+}
+
+
 .circle {
   height: 200px;
   width: 200px;

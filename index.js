@@ -180,29 +180,40 @@ $(document).ready(function() {
 
   $('.horoscope form').on('submit', function(event) {
     event.preventDefault()
-    $('.horoscope button').hide(500);
+    $('.horoscope .search-button').hide(500);
     $('.horoscope input').hide(500);
     console.log($('.horoscope input').val());
     getData(horoscopeData,['date','sign','horoscope'],'.horoscope .result')
-
+    $('.horoscope .reset-button').show(500);
   })
 
   $('.weather form').on('submit', function(event) {
     event.preventDefault()
-    $('.weather button').hide(500);
+    $('.weather .search-button').hide(500);
     $('.weather input').hide(500);
     console.log($('.weather input').val());
     getData(weatherData,'name','.weather .result')
+    $('.weather .reset-button').show(500);
 
   })
   
   $('.recipe form').on('submit', function(event) {
     event.preventDefault()
-    $('.recipe button').hide(500);
+    $('.recipe .search-button').hide(500);
     $('.recipe input').hide(500);
     console.log($('.recipe input').val());
     drinkData.drinks.forEach(elem => 
       getData(elem,['strDrink','strCategory','strIngredient1','strIngredient2','strIngredient3'],'.recipe .result'))
+      $('.recipe .reset-button').show(500);
+  })
+
+  $('.recipe .reset-button').on('click', function(event) { 
+    event.preventDefault()
+    console.log(event.target)
+    $('.recipe .search-button').hide(500);
+    $('.recipe input').hide(500);
+    //$('.recipe result').hide(500);
+    $('.recipe .result > p').remove();
   })
     
 });
