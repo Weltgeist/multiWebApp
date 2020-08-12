@@ -182,6 +182,7 @@ $(document).ready(function() {
     event.preventDefault()
     $('.horoscope .search-button').hide(500);
     $('.horoscope input').hide(500);
+    $('.horoscope .reset-button').show(500);
     console.log($('.horoscope input').val());
     getData(horoscopeData,['date','sign','horoscope'],'.horoscope .result')
     $('.horoscope .reset-button').show(500);
@@ -191,6 +192,7 @@ $(document).ready(function() {
     event.preventDefault()
     $('.weather .search-button').hide(500);
     $('.weather input').hide(500);
+    $('.weather .reset-button').show(500);
     console.log($('.weather input').val());
     getData(weatherData,'name','.weather .result')
     $('.weather .reset-button').show(500);
@@ -201,6 +203,7 @@ $(document).ready(function() {
     event.preventDefault()
     $('.recipe .search-button').hide(500);
     $('.recipe input').hide(500);
+    $('.recipe .reset-button').show(500);
     console.log($('.recipe input').val());
     drinkData.drinks.forEach(elem => 
       getData(elem,['strDrink','strCategory','strIngredient1','strIngredient2','strIngredient3'],'.recipe .result'))
