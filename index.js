@@ -6,8 +6,10 @@ function createListItems(object) {
   return listItems
 }
 
-const getData = (object,key) => {
-
+const getData = (object, key, position) => {
+  if (key.length === 1){
+    $(position).show(500).append("<p>"+object[key]+"</p>")
+  }
 }
 
 
