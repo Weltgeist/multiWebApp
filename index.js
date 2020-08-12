@@ -177,9 +177,12 @@ $(document).ready(function() {
     $(this).css('background-color', 'blue')
   })
 
+  
+
   $('.horoscope form').on('submit', function(event) {
     event.preventDefault()
     $('.horoscope button').hide(500);
+    console.log($('.horoscope input').val());
     //$('.result').show(500).slideUp(1500).slideDown(1500)
     getData(horoscopeData,['date','sign','horoscope'],'.horoscope .result')
 
@@ -188,6 +191,7 @@ $(document).ready(function() {
   $('.weather form').on('submit', function(event) {
     event.preventDefault()
     $('.weather button').hide(500);
+    console.log($('.weather input').val());
     //$('.result').show(500).slideUp(1500).slideDown(1500)
     getData(weatherData,'name','.weather .result')
 
@@ -196,6 +200,7 @@ $(document).ready(function() {
   $('.recipe form').on('submit', function(event) {
     event.preventDefault()
     $('.recipe button').hide(500);
+    console.log($('.recipe input').val());
     //$('.result').show(500).slideUp(1500).slideDown(1500)
     drinkData.drinks.forEach(elem => 
       getData(elem,['strDrink','strCategory','strIngredient1','strIngredient2','strIngredient3'],'.recipe .result'))
