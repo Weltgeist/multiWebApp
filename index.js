@@ -1,3 +1,13 @@
+function createListItems(object) {
+  var listItems = ''
+  for (var key in object) {
+    listItems += '<li>' + key + ':' + object[key] + '</li>'
+  }
+  return listItems
+}
+
+
+
 $(document).ready(function() {
   // WRITE YOUR CODE HERE.
   console.log("Hello World");
