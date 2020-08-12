@@ -182,7 +182,8 @@ $(document).ready(function() {
 
   $('.horoscope form').on('submit', function(event) {
     event.preventDefault()
-    $.get('http://horoscope-lhl.herokuapp.com/horoscopes/gemini', function(data) {
+    const search = $('.horoscope input').val()
+    $.get('http://horoscope-lhl.herokuapp.com/horoscopes/'+search, function(data) {
   console.log(data)
 })
     $('.horoscope .search-button').hide(500);
@@ -195,7 +196,8 @@ $(document).ready(function() {
 
   $('.weather form').on('submit', function(event) {
     event.preventDefault()
-    $.get('https://api.openweathermap.org/data/2.5/weather?units=metric&q=London&appid='+keyWeatherApi, function(data) {
+    const search = $('.weather input').val()
+    $.get('https://api.openweathermap.org/data/2.5/weather?units=metric&q='+search+'&appid='+keyWeatherApi, function(data) {
   console.log(data)
 })
     $('.weather .search-button').hide(500);
@@ -209,7 +211,8 @@ $(document).ready(function() {
   
   $('.recipe form').on('submit', function(event) {
     event.preventDefault()
-    $.get('https://www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita', function(data) {
+    const search = $('.recipe input').val()
+    $.get('https://www.thecocktaildb.com/api/json/v1/1/search.php?s='+search, function(data) {
   console.log(data)
 })
     $('.recipe .search-button').hide(500);
