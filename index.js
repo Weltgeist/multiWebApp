@@ -210,12 +210,34 @@ $(document).ready(function() {
   $('.recipe .reset-button').on('click', function(event) { 
     event.preventDefault()
     console.log(event.target)
-    $('.recipe .search-button').hide(500);
-    $('.recipe input').hide(500);
-    //$('.recipe result').hide(500);
+    $('.recipe .search-button').show(500);
+    $('.recipe input').show(500);
+    $('.recipe .reset-button').hide(500);
+    $('.recipe .result').hide(500);
     $('.recipe .result > p').remove();
   })
     
+  $('.weather .reset-button').on('click', function(event) { 
+    event.preventDefault()
+    console.log(event.target)
+    $('.weather .search-button').show(500);
+    $('.weather input').show(500);
+    $('.weather .reset-button').hide(500);
+    $('.weather .result').hide(500);
+    $('.weather .result > p').remove();
+  })
+  
+  $('.horoscope .reset-button').on('click', function(event) { 
+    event.preventDefault()
+    console.log(event.target)
+    $('.horoscope .search-button').show(500);
+    $('.horoscope input').show(500);
+    $('.horoscope .reset-button').hide(500);
+    $('.horoscope .result').hide(500);
+    $('.horoscope .result > p').remove();
+  })
+    
+
 });
 
 
