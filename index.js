@@ -187,6 +187,9 @@ $(document).ready(function() {
   $('.horoscope form').on('submit', function(event) {
     event.preventDefault()
     const search = $('.horoscope input').val()
+    $('.horoscope .search-button').hide(500);
+    $('.horoscope input').hide(500);
+    $('.horoscope .reset-button').show(500);
     // $.ajax({
     //   type:'POST',
     //   url:baseUrlHoroscope+search+'&day=today',
@@ -195,44 +198,40 @@ $(document).ready(function() {
     //   }
     //    });
      $.get(baseUrlHoroscope + search, function(data) {
-   console.log(data)
+   console.log(data);
+   //console.log($('.horoscope input').val());
+   getData(horoscopeData,['date','sign','horoscope'],'.horoscope .result')
+   $('.horoscope .reset-button').show(500);
 })
-    $('.horoscope .search-button').hide(500);
-    $('.horoscope input').hide(500);
-    $('.horoscope .reset-button').show(500);
-    //console.log($('.horoscope input').val());
-    getData(horoscopeData,['date','sign','horoscope'],'.horoscope .result')
-    $('.horoscope .reset-button').show(500);
   })
 
   $('.weather form').on('submit', function(event) {
     event.preventDefault()
-    const search = $('.weather input').val()
-    $.get(baseUrlWeather + search +'&appid='+ keyWeatherApi, function(data) {
-  console.log(data)
-})
+    const search = $('.weather input').val();
     $('.weather .search-button').hide(500);
     $('.weather input').hide(500);
     $('.weather .reset-button').show(500);
-    //console.log($('.weather input').val());
-    getData(weatherData,'name','.weather .result')
-    $('.weather .reset-button').show(500);
-
+    $.get(baseUrlWeather + search +'&appid='+ keyWeatherApi, function(data) {
+  console.log(data);
+  //console.log($('.weather input').val());
+  getData(weatherData,'name','.weather .result')
+  $('.weather .reset-button').show(500);
+})
   })
   
   $('.recipe form').on('submit', function(event) {
     event.preventDefault()
     const search = $('.recipe input').val()
-    $.get(baseUrlDrinks + search, function(data) {
-  console.log(data)
-})
     $('.recipe .search-button').hide(500);
     $('.recipe input').hide(500);
     $('.recipe .reset-button').show(500);
-    //console.log($('.recipe input').val());
-    drinkData.drinks.forEach(elem => 
-      getData(elem,['strDrink','strCategory','strIngredient1','strIngredient2','strIngredient3'],'.recipe .result'))
-      $('.recipe .reset-button').show(500);
+    $.get(baseUrlDrinks + search, function(data) {
+  console.log(data);
+  //console.log($('.recipe input').val());
+  drinkData.drinks.forEach(elem => 
+    getData(elem,['strDrink','strCategory','strIngredient1','strIngredient2','strIngredient3'],'.recipe .result'))
+    $('.recipe .reset-button').show(500);
+})
   })
 
   $('.recipe .reset-button').on('click', function(event) { 
