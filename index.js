@@ -209,6 +209,8 @@ $(document).ready(function() {
      $.post(baseUrlHoroscope + search + '&day=today', function(data) {
    console.log(data);
    //console.log($('.horoscope input').val());
+   $('.horoscope .result').show(500).append("<p>"+"Here's your sign, today's date and your next love's sign. You also have a short description"+"</p>");
+   $('.horoscope .result').show(500).append("<p>"+search+"</p>");
    getData(data,['current_date','compatibility','description'],'.horoscope .result')
    $('.horoscope .reset-button').show(500);
 })
