@@ -1,5 +1,5 @@
 keyWeatherApi = '8387c1d42ca5ca7e1f30a03217438028';
-baseUrlHoroscope ='https://zodiacal.herokuapp.com/api/';
+baseUrlHoroscope ='https://aztro.sameerkumar.website?sign=';
 //urlHoroscope = 'http://horoscope-lhl.herokuapp.com/horoscopes/';
 baseUrlWeather = 'https://api.openweathermap.org/data/2.5/weather?units=metric&q=';
 baseUrlDrinks = 'https://www.thecocktaildb.com/api/json/v1/1/search.php?s=';
@@ -206,10 +206,10 @@ $(document).ready(function() {
     //   console.log(data);
     //   }
     //    });
-     $.get(baseUrlHoroscope + search, function(data) {
+     $.post(baseUrlHoroscope + search + '&day=today', function(data) {
    console.log(data);
    //console.log($('.horoscope input').val());
-   getData(horoscopeData,['date','sign','horoscope'],'.horoscope .result')
+   getData(data,['current_date','compatibility','description'],'.horoscope .result')
    $('.horoscope .reset-button').show(500);
 })
   })
