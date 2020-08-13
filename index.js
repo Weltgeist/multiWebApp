@@ -18,7 +18,16 @@ const getData = (object, key, position) => {
   }
   else if  (Array.isArray(key)){
     //console.log(key)
-    key.forEach(elem => $(position).show(500).append("<p>"+object[elem]+"</p>"));
+    key.forEach(elem => {
+      console.log(object[elem]);
+      if (!(typeof object[elem] === 'string')) {
+        console.log(1)
+        $(position).show(500).append("<pre>"+JSON.stringify(object[elem]).replace(/,/g, ", \n")+"</pre>")   
+      } else {
+        console.log(2)
+        $(position).show(500).append("<p>"+object[elem]+"</p>")
+      }
+    });
   }
 }
 
@@ -214,7 +223,7 @@ $(document).ready(function() {
     $.get(baseUrlWeather + search +'&appid='+ keyWeatherApi, function(data) {
   console.log(data);
   //console.log($('.weather input').val());
-  getData(weatherData,'name','.weather .result')
+  getData(data,['name','coord','main','wind'],'.weather .result')
   $('.weather .reset-button').show(500);
 })
   })
@@ -226,9 +235,9 @@ $(document).ready(function() {
     $('.recipe input').hide(500);
     $('.recipe .reset-button').show(500);
     $.get(baseUrlDrinks + search, function(data) {
-  console.log(data);
+  console.log(data.drinks);
   //console.log($('.recipe input').val());
-  drinkData.drinks.forEach(elem => 
+  data.drinks.forEach(elem => 
     getData(elem,['strDrink','strCategory','strIngredient1','strIngredient2','strIngredient3'],'.recipe .result'))
     $('.recipe .reset-button').show(500);
 })
@@ -251,7 +260,7 @@ $(document).ready(function() {
     $('.weather input').show(500);
     $('.weather .reset-button').hide(500);
     $('.weather .result').hide(500);
-    $('.weather .result > p').remove();
+    $('.weather .result > p, pre').remove();
   })
   
   $('.horoscope .reset-button').on('click', function(event) { 
